@@ -5,17 +5,20 @@ import Error from '../Pages/Error'
 import Navbar from '../Layout/Navbar'
 import BooksView from '../Features/BooksView'
 import AddBook from '../Features/AddBook'
+import Footer from '../Layout/Footer'
 function Index() {
   return (
    < BrowserRouter>
    <Navbar/>
+   <main>
    <Routes>
     <Route path='/' element={<Home/>}/>
     <Route path='/show-books' element={<BooksView/>}/>
     <Route path='/add-book' element={<AddBook/>}/>
     <Route path='/*' element={<Error/>}/>
    </Routes>
-   
+   </main>
+   <Footer/>
    </BrowserRouter>
   )
 }

@@ -23,7 +23,7 @@ function Navbar() {
     ]
 
   return (
-    <nav className='w-full bg-gray-900 text-white flex gap-8 justify-center py-4 '>
+    <nav className='w-full bg-gray-900 text-white flex gap-8 justify-center py-4 sticky z-10 top-0 '>
         {menu.map((menu)=> {
            return <div key={menu.id}>
             <Link to={menu.link} 
