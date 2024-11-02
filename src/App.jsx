@@ -1,10 +1,11 @@
 import React from 'react'
+import Index from './Router/Index'
 
 function App() {
   return (
-    <div>
-      <h1 className='font-bold text-center text-red-500'>App</h1>
-      </div>
+    <div className='mx-4 my-4'>
+      <Index/>
+    </div>
   )
 }
 
