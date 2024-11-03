@@ -1,8 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteBook } from './BookSlice';
 
 function BooksView() {
     const books = useSelector((state)=>state.booksReducer.books);
+    const dispatch = useDispatch();
+
+    // delete book
+    const handleDelete = (id) =>{
+         dispatch(deleteBook(id));
+    }
     
   return (
     <div className='w-full flex flex-col justify-center items-center my-8'>
@@ -25,8 +32,17 @@ function BooksView() {
                         <td className='border border-black p-4'>{title}</td>
                         <td className='border border-black p-4'>{author}</td>
                         <td className=' '>
-                            <button className='sm:bg-blue-600 px-4 py-1 sm:text-white text-blue-600 rounded hover:bg-blue-500'>Edit</button>
-                            <button className='sm:bg-red-600 px-4 py-1 sm:text-white text-red-600 sm:mx-2 rounded  hover:bg-red-500'>Delete</button>
+                            <button 
+                            className='sm:bg-blue-600 px-4 py-1 sm:text-white text-blue-600 rounded hover:bg-blue-500'
+                            
+                            >Edit
+                            </button>
+                            <button 
+                            className='sm:bg-red-600 px-4 py-1 sm:text-white text-red-600 sm:mx-2 rounded  hover:bg-red-500'
+                            onClick={()=>handleDelete(id)}
+                            >
+                            Delete
+                            </button>
                         </td>
                     </tr>
                 })}
