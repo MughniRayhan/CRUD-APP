@@ -6,6 +6,7 @@ import Navbar from '../Layout/Navbar'
 import BooksView from '../Features/BooksView'
 import AddBook from '../Features/AddBook'
 import Footer from '../Layout/Footer'
+import EditBook from '../Features/EditBook'
 function Index() {
   return (
    < BrowserRouter>
@@ -15,6 +16,7 @@ function Index() {
     <Route path='/' element={<Home/>}/>
     <Route path='/show-books' element={<BooksView/>}/>
     <Route path='/add-book' element={<AddBook/>}/>
+    <Route path='/edit-book' element={<EditBook/>}/>
     <Route path='/*' element={<Error/>}/>
    </Routes>
    </main>

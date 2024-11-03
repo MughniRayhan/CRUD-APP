@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteBook } from './BookSlice';
+import { Link } from 'react-router-dom';
 
 function BooksView() {
     const books = useSelector((state)=>state.booksReducer.books);
@@ -18,7 +19,6 @@ function BooksView() {
         <table className='border-collapse border border-black lg:w-[50%] text-center w-[90%] text-[12px] sm:text-[16px]'>
             <thead className=' h-10 bg-gray-100'>
                 <tr className='text-[12px] sm:text-[16px]'>
-                    <th className='border border-black px-4'>ID</th>
                     <th className='border border-black'>Title</th>
                     <th className='border border-black'>Author</th>
                     <th className='border border-black'>Action</th>
@@ -28,15 +28,16 @@ function BooksView() {
                 {books && books.map((book)=>{
                     const {id,title,author} = book;
                     return <tr key={id} className='border border-black h-14 '> 
-                        <td className='border border-black p-4'>{id}</td>
                         <td className='border border-black p-4'>{title}</td>
                         <td className='border border-black p-4'>{author}</td>
-                        <td className=' '>
+                        <td >
+                            <Link to='/edit-book' state={{id, title, author}}>
                             <button 
                             className='sm:bg-blue-600 px-4 py-1 sm:text-white text-blue-600 rounded hover:bg-blue-500'
                             
                             >Edit
                             </button>
+                            </Link>
                             <button 
                             className='sm:bg-red-600 px-4 py-1 sm:text-white text-red-600 sm:mx-2 rounded  hover:bg-red-500'
                             onClick={()=>handleDelete(id)}
