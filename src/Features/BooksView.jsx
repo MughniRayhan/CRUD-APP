@@ -24,9 +24,9 @@ function BooksView() {
                         <td className='border border-black p-4'>{id}</td>
                         <td className='border border-black p-4'>{title}</td>
                         <td className='border border-black p-4'>{author}</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                        <td className=' '>
+                            <button className='sm:bg-blue-600 px-4 py-1 sm:text-white text-blue-600 rounded hover:bg-blue-500'>Edit</button>
+                            <button className='sm:bg-red-600 px-4 py-1 sm:text-white text-red-600 sm:mx-2 rounded  hover:bg-red-500'>Delete</button>
                         </td>
                     </tr>
                 })}
