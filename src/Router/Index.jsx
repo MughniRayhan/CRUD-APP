@@ -19,6 +19,7 @@ function Index() {
     <Route path='/edit-book' element={<EditBook/>}/>
     <Route path='/*' element={<Error/>}/>
    </Routes>
+   
    </main>
    <Footer/>
    </BrowserRouter>

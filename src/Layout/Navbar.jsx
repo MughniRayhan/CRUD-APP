@@ -12,7 +12,7 @@ function Navbar() {
         },
         {
             id:2,
-            name: "Show Books",
+            name: "View Books",
             link: "/show-books"
         },
         {
